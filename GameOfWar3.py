@@ -57,6 +57,7 @@ def playRound(PlayerA, PlayerB):
 		PlayerB.insert(0, Acard)
 		
 	else:
+		#WAR!
 		PlayerA.append(Acard)
 		PlayerB.append(Bcard)
 		PlayerA, PlayerB = WAR(PlayerA, PlayerB)
@@ -88,6 +89,7 @@ def WAR(PlayerA, PlayerB):
 			PlayerB = Bstack + Astack + PlayerB
 		
 		else:
+			#Everyone loses
 			pass
 	
 	

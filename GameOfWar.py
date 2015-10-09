@@ -57,6 +57,7 @@ def playRound(PlayerA, PlayerB):
 		PlayerB.insert(0, Acard)
 		
 	else:
+		# WAR!
 		PlayerA, PlayerB = WAR(PlayerA, PlayerB)
 
 	return PlayerA, PlayerB
