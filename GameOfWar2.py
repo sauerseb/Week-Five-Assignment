@@ -1,6 +1,7 @@
-# Evan Sauers
-# GameOfWar.py
-# Game of War Version 1
+# Evan Sauers 
+# GameOfWar2.py
+# Game of War Version 2
+# Collaborated with Rebekkah and Marissa
 
 import random	
 
@@ -48,16 +49,14 @@ def playRound(PlayerA, PlayerB):
 	if rankA > rankB:
 		#If Player A wins
 		PlayerA.insert(0, Acard)
-		PlayerA.insert(0, Bcard)
 		
 	elif rankB < rankA:
 		#If Player B wins
 		PlayerB.insert(0, Bcard)
-		PlayerB.insert(0, Acard)
 		
 	else:
 		PlayerA, PlayerB = WAR(PlayerA, PlayerB)
-
+		
 	return PlayerA, PlayerB
 
 
@@ -72,4 +71,6 @@ def getRank(anyCard):
 
 if __name__ == '__main__':
 	main()
+
+
 

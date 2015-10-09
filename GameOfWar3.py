@@ -1,6 +1,6 @@
 # Evan Sauers
-# GameOfWar.py
-# Game of War Version 1
+# GameOfWar3.py
+# Game of War Version 3
 
 import random	
 
@@ -35,7 +35,7 @@ def main():
 	# End of game
 	
 	print("There were ", gameCounter, " rounds played")
-	print("Player A has " + str(len(PlayerAHand)) + "cards, Player B has " + str(len(PlayerBHand)) + "cards")
+	print("Player A has " + str(len(PlayerAHand)) + "cards, Player B has " + str(len(PlayerBHand)) + " cards")
 	
 def playRound(PlayerA, PlayerB):
 	
@@ -50,21 +50,48 @@ def playRound(PlayerA, PlayerB):
 		PlayerA.insert(0, Acard)
 		PlayerA.insert(0, Bcard)
 		
-	elif rankB < rankA:
+	elif rankB > rankA:
 		#If Player B wins
 		PlayerB.insert(0, Bcard)
 		PlayerB.insert(0, Acard)
 		
 	else:
+		PlayerA.append(Acard)
+		PlayerB.append(Bcard)
 		PlayerA, PlayerB = WAR(PlayerA, PlayerB)
-
+		
 	return PlayerA, PlayerB
 
 
 def WAR(PlayerA, PlayerB):
+	print("War")
 
+	Astack = []
+	Bstack = []
+
+	if len(PlayerA) > 4 and len(PlayerB) > 4:
+	
+		for x in range(4):
+			Astack.append(PlayerA.pop())
+			Bstack.append(PlayerB.pop())
+
+
+		if getRank(Astack[3]) > getRank(Bstack[3]):
+			
+			#If Player A wins
+			PlayerA = Astack + Bstack + PlayerA
+		
+		elif getRank(Bstack[3]) > getRank(Astack[3]):
+		
+			#If Player B wins
+			PlayerB = Bstack + Astack + PlayerB
+		
+		else:
+			pass
+	
+	
 	return PlayerA, PlayerB
-
+		
 	
 def getRank(anyCard):
 	return anyCard % 13
