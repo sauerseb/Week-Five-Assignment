@@ -1,7 +1,7 @@
 # Evan Sauers 
 # GameOfWar2.py
 # Game of War Version 2
-# Collaborated with Rebekkah and Marissa
+# Collaborated with Rebekah and Marisa
 
 import random	
 

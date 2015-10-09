@@ -1,6 +1,7 @@
 # Evan Sauers
 # GameOfWar3.py
 # Game of War Version 3
+# Collaborated Rebekah and Marisa
 
 import random	
 
